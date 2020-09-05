@@ -55,6 +55,22 @@ public class Campo {
         }
         
     }
+    
+    public int clicar(int linha, int coluna){
+        return matriz[linha][coluna].clicar();
+    }
+    
+    public boolean isFinalizado(){
+        
+        for (int i = 0; i < C.NUM_LINHAS; i++) {
+            for (int j = 0; j < C.NUM_COLUNAS; j++) {
+                if (matriz[i][j].minado && !matriz[i][j].marcado ||
+                        !matriz[i][j].minado && matriz[i][j].marcado)
+                    return false;
+            }            
+        }
+        return true;
+    }
 
     @Override
     public String toString() {
@@ -68,6 +84,8 @@ public class Campo {
         }
         return str;        
     }
+    
+    
     
     
     

@@ -16,8 +16,7 @@ public class Espaco {
     boolean minado;
     boolean clicado;
     boolean revelado;
-    boolean marcado;
-    
+    boolean marcado;  
 
     ArrayList<Espaco> vizinhos;
 

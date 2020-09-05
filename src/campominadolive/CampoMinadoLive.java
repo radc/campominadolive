@@ -18,9 +18,13 @@ public class CampoMinadoLive {
      */
     public static void main(String[] args) {
         
+        
+        //c.adicionarMinas();
+        //System.out.println(c);
+        
         Campo c = new Campo();
         c.adicionarMinas();
-        System.out.println(c);
+        JFrameCampo f = new JFrameCampo(c);
     }
     
 }
