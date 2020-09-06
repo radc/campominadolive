@@ -81,6 +81,12 @@ public class Espaco {
         this.marcado = false;
         this.clicado = false;
     }
+    
+    public boolean isFinalizado(){
+        if(this.minado && this.marcado) return true;
+        if(!this.minado && !this.marcado) return true;
+        return false;
+    }
 
     @Override
     public String toString() {
