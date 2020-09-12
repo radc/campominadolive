@@ -17,14 +17,11 @@ public class CampoMinadoLive {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        
-        //c.adicionarMinas();
-        //System.out.println(c);
-        
-        Campo c = new Campo();
-        c.adicionarMinas();
-        JFrameCampo f = new JFrameCampo(c);
+        JFrameCampo f = new JFrameCampo();
+    }
+    
+    public static void hardReset(){
+        JFrameCampo f = new JFrameCampo();
     }
     
 }

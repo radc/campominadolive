@@ -12,6 +12,8 @@ package campominadolive;
 public abstract class C {
     static int NUM_LINHAS = 6;
     static int NUM_COLUNAS = 6;
-    static int NUM_MINAS = 5;
-    static int TAM_ESPACO = 30;
+    static int NUM_MINAS = 6;
+    static int TAM_ESPACO = 50;
+    static int OFFSET_SUPERIOR = 100;
+    static int ALTURA_BARRA_SUP = 20;
 }

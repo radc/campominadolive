@@ -19,6 +19,8 @@ public class Espaco {
     boolean marcado;  
 
     ArrayList<Espaco> vizinhos;
+    
+    JButtonEspaco button;
 
     public Espaco() {
         this.minado = false;
@@ -45,14 +47,12 @@ public class Espaco {
             return false;
         }
 
-    }
-       
+    }  
     
     public boolean marcar(){
         this.marcado = !this.marcado;
         return this.marcado;
-    }
-    
+    }   
     
     //-1 clicou numa mina
     //0 nao possui minas nos vizinhos
@@ -69,8 +69,8 @@ public class Espaco {
     
     public int numMinasNosVizinhos(){
         int n = 0;
-        for (Espaco e : this.vizinhos) {
-            if(e.minado) n++;
+        for (Espaco vizinho : this.vizinhos) {
+            if(vizinho.minado) n++;
         }
         return n;
     }
@@ -84,9 +84,15 @@ public class Espaco {
     
     public boolean isFinalizado(){
         if(this.minado && this.marcado) return true;
-        if(!this.minado && !this.marcado) return true;
+        if(!this.minado && !this.marcado && this.clicado) return true;
         return false;
     }
+    
+    public void setButton(JButtonEspaco button){
+        this.button = button;
+    }
+    
+    
 
     @Override
     public String toString() {

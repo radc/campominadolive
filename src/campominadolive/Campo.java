@@ -12,7 +12,8 @@ import java.util.Random;
  * @author ruhanconceicao
  */
 public class Campo {
-    Espaco[][] matriz;    
+    Espaco[][] matriz;
+    
     
     public Campo(){
         matriz = new Espaco[C.NUM_LINHAS][C.NUM_COLUNAS];
@@ -53,6 +54,7 @@ public class Campo {
                 n--;
             }            
         }
+        System.out.println(this);
         
     }
     
@@ -60,7 +62,7 @@ public class Campo {
         return matriz[linha][coluna].clicar();
     }
     
-    public boolean isFinalizado(){        
+    public boolean isVencido(){        
         for (int i = 0; i < C.NUM_LINHAS; i++) {
             for (int j = 0; j < C.NUM_COLUNAS; j++) {
                 if (!matriz[i][j].isFinalizado()) return false;
@@ -68,6 +70,20 @@ public class Campo {
         }
         return true;
     }
+    
+    public boolean isPerdido(){        
+        for (int i = 0; i < C.NUM_LINHAS; i++) {
+            for (int j = 0; j < C.NUM_COLUNAS; j++) {
+                if (matriz[i][j].clicado && matriz[i][j].minado) return true;
+            }            
+        }
+        return false;
+    }
+    
+    public Espaco getEspaco(int linha, int coluna){
+        return matriz[linha][coluna];
+    }
+    
 
     @Override
     public String toString() {
